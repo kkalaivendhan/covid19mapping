@@ -12,9 +12,9 @@ var styleJSON = {
             "tiles": ["https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"],
             "tileSize": 256
         },
-        "THIRUVARUR_1": {
+        "THIRUVARUR_RVTHIRUVARUR_RVkml_1": {
             "type": "geojson",
-            "data": json_THIRUVARUR_1
+            "data": json_THIRUVARUR_RVTHIRUVARUR_RVkml_1
         }
                     ,
         "highriskzone_2": {
@@ -49,11 +49,11 @@ var styleJSON = {
             "source": "GoogleRoad_0"
         },
         {
-            "id": "lyr_THIRUVARUR_1_0",
+            "id": "lyr_THIRUVARUR_RVTHIRUVARUR_RVkml_1_0",
             "type": "fill",
-            "source": "THIRUVARUR_1",
+            "source": "THIRUVARUR_RVTHIRUVARUR_RVkml_1",
             "layout": {},
-            "paint": {'fill-opacity': 0.5, 'fill-color': '#cccccc'}
+            "paint": {'fill-opacity': 0.5, 'fill-color': '#beb297'}
         }
 ,
         {

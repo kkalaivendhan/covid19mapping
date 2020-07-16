@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/MarkerCluster.css">
         <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
@@ -33,7 +34,8 @@
         <script src="js/proj4.js"></script>
         <script src="js/proj4leaflet.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
-        <script src="data/THIRUVARUR_1.js"></script>
+        <script src="js/leaflet-search.js"></script>
+        <script src="data/THIRUVARUR_RVTHIRUVARUR_RVkml_1.js"></script>
         <script src="data/highriskzone_2.js"></script>
         <script src="data/riskzone7km_3.js"></script>
         <script src="data/mainpersonplace_4.js"></script>
@@ -43,8 +45,8 @@
 var map = new mapboxgl.Map({
  container: 'map',
  style: styleJSON,
- center: [79.53023638323002,10.68168499396815],
- zoom: 10,
+ center: [79.50384637820733,10.76491343291523],
+ zoom: 11,
  bearing: 360.0,
  attributionControl: false
 });
@@ -54,7 +56,7 @@ map.addControl(new mapboxgl.AttributionControl({
     compact: false
 }));
 
-map.on('click', 'lyr_THIRUVARUR_1_0', function (e) {
+map.on('click', 'lyr_THIRUVARUR_RVTHIRUVARUR_RVkml_1_0', function (e) {
     var description = '<table>\
                     <tr>\
                         <td colspan="2">' + (e.features[0].properties['Name'] !== null ? Autolinker.link(e.features[0].properties['Name'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
@@ -98,18 +100,18 @@ map.on('click', 'lyr_THIRUVARUR_1_0', function (e) {
 });
 
 // Change the cursor to a pointer when the mouse is over the places layer.
-map.on('mouseenter', 'lyr_THIRUVARUR_1_0', function () {
+map.on('mouseenter', 'lyr_THIRUVARUR_RVTHIRUVARUR_RVkml_1_0', function () {
     map.getCanvas().style.cursor = 'pointer';
 });
 
 // Change it back to a pointer when it leaves.
-map.on('mouseleave', 'lyr_THIRUVARUR_1_0', function () {
+map.on('mouseleave', 'lyr_THIRUVARUR_RVTHIRUVARUR_RVkml_1_0', function () {
     map.getCanvas().style.cursor = '';
 });
 map.on('click', 'lyr_highriskzone_2_0', function (e) {
     var description = '<table>\
                     <tr>\
-                        <td colspan="2"><strong>id</strong><br />' + (e.features[0].properties['id'] !== null ? Autolinker.link(e.features[0].properties['id'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                        <td colspan="2">' + (e.features[0].properties['id'] !== null ? Autolinker.link(e.features[0].properties['id'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                 </table>'
 
@@ -155,9 +157,6 @@ map.on('click', 'lyr_mainpersonplace_4_0', function (e) {
                     <tr>\
                         <td colspan="2">' + (e.features[0].properties['id'] !== null ? Autolinker.link(e.features[0].properties['id'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2">' + (e.features[0].properties['NAME OF PE'] !== null ? Autolinker.link(e.features[0].properties['NAME OF PE'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
-                    </tr>\
                 </table>'
 
     new mapboxgl.Popup()
@@ -175,7 +174,7 @@ map.on('mouseenter', 'lyr_mainpersonplace_4_0', function () {
 map.on('mouseleave', 'lyr_mainpersonplace_4_0', function () {
     map.getCanvas().style.cursor = '';
 });
-    var toggleableLayerIds = ['lyr_GoogleRoad_0_0', 'Google Road','lyr_THIRUVARUR_1_0', 'THIRUVARUR','lyr_highriskzone_2_0', 'high risk zone','lyr_riskzone7km_3_0', 'risk zone 7 km','lyr_mainpersonplace_4_0', 'main person place'];
+    var toggleableLayerIds = ['lyr_GoogleRoad_0_0', 'Google Road','lyr_THIRUVARUR_RVTHIRUVARUR_RVkml_1_0', 'THIRUVARUR_RV THIRUVARUR_RV.kml','lyr_highriskzone_2_0', 'high risk zone','lyr_riskzone7km_3_0', 'risk zone 7 km','lyr_mainpersonplace_4_0', 'main person place'];
 
     for (var i = 0; i < toggleableLayerIds.length; i=i+2) {
         var id = toggleableLayerIds[i];
